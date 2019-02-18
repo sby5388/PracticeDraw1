@@ -2,11 +2,15 @@ package com.hencoder.hencoderpracticedraw1.practice;
 
 import android.content.Context;
 import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.Paint;
+import android.graphics.Rect;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.View;
 
 public class Practice3DrawRectView extends View {
+    final private Paint paint = new Paint();
 
     public Practice3DrawRectView(Context context) {
         super(context);
@@ -25,5 +29,15 @@ public class Practice3DrawRectView extends View {
         super.onDraw(canvas);
 
 //        练习内容：使用 canvas.drawRect() 方法画矩形
+        paint.setColor(Color.BLACK);
+        paint.setAntiAlias(true);
+        paint.setStyle(Paint.Style.FILL);
+        int length = 250;
+        int left = 250;
+        int top = 100;
+        int bottom = top + length;
+        int right = left + length;
+        Rect rect = new Rect(left, top, right, bottom);
+        canvas.drawRect(rect, paint);
     }
 }
