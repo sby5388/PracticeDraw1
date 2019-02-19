@@ -40,14 +40,14 @@ public class Practice9DrawPathView extends View {
         float right = left + radius;
         float bottom = top + radius;
         RectF rectF = new RectF(left, top, right, bottom);
-        path.addArc(rectF, 135f, 225f);
+        path.addArc(rectF, 180f, 180f);
         rectF.left = rectF.right;
         rectF.right = rectF.left + radius;
-        path.addArc(rectF, 180f, 225f);
+        path.addArc(rectF, 180f, 180f);
 
         path.lineTo(rectF.left, rectF.bottom + radius);
-        path.close();
-//        path.lineTo(0,radius);
+//        path.close();
+        path.lineTo(left, (bottom + top) / 2);
         canvas.drawPath(path, paint);
     }
 }
