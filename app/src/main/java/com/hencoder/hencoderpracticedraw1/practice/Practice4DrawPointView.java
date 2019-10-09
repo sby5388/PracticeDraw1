@@ -41,4 +41,15 @@ public class Practice4DrawPointView extends View {
         canvas.drawPoint(450, 250, paint);
 
     }
+
+    private void drawPoint(Canvas canvas) {
+        final Paint paint = new Paint();
+        paint.setColor(Color.RED);
+        //设置平滑：true
+        paint.setAntiAlias(true);
+        paint.setStyle(Paint.Style.FILL);
+        paint.setStrokeWidth(30f);
+        paint.setStrokeCap(Paint.Cap.BUTT);
+
+    }
 }

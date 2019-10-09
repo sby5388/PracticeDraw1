@@ -37,6 +37,7 @@ public class Practice3DrawRectView extends View {
         int top = 100;
         int bottom = top + length;
         int right = left + length;
+        //矩形A，父容器C,四个参数分别是A的左边到C的左边，A的顶部到C的顶部，A的右边到C的左边，A的底部到C的顶部
         Rect rect = new Rect(left, top, right, bottom);
         canvas.drawRect(rect, paint);
     }

@@ -50,4 +50,18 @@ public class Practice2DrawCircleView extends View {
         canvas.drawCircle(cx, cy * 2, radius, paint);
 
     }
+
+
+    private void temp(Canvas canvas) {
+        final Paint paint = new Paint();
+        paint.setColor(Color.BLACK);
+        paint.setStyle(Paint.Style.FILL);
+
+        float cx = 100f;
+        float cy = 100f;
+        float radius = 50f;
+        //圆心的x坐标，圆心的y坐标，半径，画笔
+        canvas.drawCircle(cx, cy, radius, paint);
+
+    }
 }

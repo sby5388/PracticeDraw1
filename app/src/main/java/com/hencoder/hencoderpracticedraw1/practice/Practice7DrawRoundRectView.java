@@ -37,5 +37,26 @@ public class Practice7DrawRoundRectView extends View {
         paint.setStyle(Paint.Style.FILL);
 
         canvas.drawRoundRect(rectF, cx, cy, paint);
+        // TODO: 2019/10/9 temp
+        drawRoundRect(canvas);
+    }
+
+    private void drawRoundRect(Canvas canvas) {
+        final RectF rectF = new RectF();
+        rectF.left = 100f;
+        rectF.right = 300f;
+        rectF.top = 100f;
+        rectF.bottom = 240f;
+        // TODO: 2019/10/9 参考自 https://www.jianshu.com/p/c050bee691d3
+//        float rx：生成圆角的椭圆的X轴半径
+//       float ry：生成圆角的椭圆的Y轴半径
+        final float rx = 20f;
+        final float ry = 20f;
+        final Paint paint = new Paint();
+        paint.setColor(Color.BLUE);
+        paint.setStyle(Paint.Style.STROKE);
+        paint.setStrokeWidth(10f);
+        paint.setAntiAlias(true);
+        canvas.drawRoundRect(rectF, rx, ry, paint);
     }
 }

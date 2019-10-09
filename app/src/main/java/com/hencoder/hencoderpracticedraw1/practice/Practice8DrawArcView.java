@@ -28,6 +28,11 @@ public class Practice8DrawArcView extends View {
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
 
+        // TODO: 2019/10/9 temp
+        if (true) {
+            drawArc(canvas);
+        }
+
 //        练习内容：使用 canvas.drawArc() 方法画弧形和扇形
         paint.setColor(Color.BLACK);
         paint.setAntiAlias(true);
@@ -36,6 +41,7 @@ public class Practice8DrawArcView extends View {
 
         RectF rectF = new RectF(200f, 100f, 450f, 300f);
 
+
         canvas.drawArc(rectF, -170f, 45f, false, paint);
         //
         paint.setStyle(Paint.Style.FILL);
@@ -43,4 +49,27 @@ public class Practice8DrawArcView extends View {
         //
         canvas.drawArc(rectF, 15f, 155f, false, paint);
     }
+
+
+    private void drawArc(Canvas canvas) {
+        // TODO: 2019/10/9 一个饼状图
+        final Paint paint = new Paint();
+        paint.setStyle(Paint.Style.FILL);
+        final RectF rectF = new RectF(300f, 200f, 600f, 400f);
+
+        paint.setColor(Color.RED);
+        canvas.drawArc(rectF, -90f, 120f, true, paint);
+        paint.setColor(Color.BLUE);
+        canvas.drawArc(rectF, 30f, 120f, true, paint);
+        paint.setColor(Color.GREEN);
+        canvas.drawArc(rectF, 150f, 120f, true, paint);
+    }
+
+
+    // TODO: 2019/10/9 绘制一个并不连接圆心的扇形
+
+    private void tempArc(Canvas canvas) {
+
+    }
+
 }

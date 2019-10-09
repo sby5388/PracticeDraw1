@@ -10,14 +10,19 @@ import android.view.ViewGroup;
 import android.view.ViewStub;
 
 public class PageFragment extends Fragment {
-    @LayoutRes int sampleLayoutRes;
-    @LayoutRes int practiceLayoutRes;
+
+    private static final String SAMPLE_LAYOUT_RES = "sampleLayoutRes";
+    private static final String PRACTICE_LAYOUT_RES = "practiceLayoutRes";
+    @LayoutRes
+    int sampleLayoutRes;
+    @LayoutRes
+    int practiceLayoutRes;
 
     public static PageFragment newInstance(@LayoutRes int sampleLayoutRes, @LayoutRes int practiceLayoutRes) {
-        PageFragment fragment = new PageFragment();
-        Bundle args = new Bundle();
-        args.putInt("sampleLayoutRes", sampleLayoutRes);
-        args.putInt("practiceLayoutRes", practiceLayoutRes);
+        final PageFragment fragment = new PageFragment();
+        final Bundle args = new Bundle();
+        args.putInt(SAMPLE_LAYOUT_RES, sampleLayoutRes);
+        args.putInt(PRACTICE_LAYOUT_RES, practiceLayoutRes);
         fragment.setArguments(args);
         return fragment;
     }
@@ -43,8 +48,8 @@ public class PageFragment extends Fragment {
         super.onCreate(savedInstanceState);
         Bundle args = getArguments();
         if (args != null) {
-            sampleLayoutRes = args.getInt("sampleLayoutRes");
-            practiceLayoutRes = args.getInt("practiceLayoutRes");
+            sampleLayoutRes = args.getInt(SAMPLE_LAYOUT_RES);
+            practiceLayoutRes = args.getInt(PRACTICE_LAYOUT_RES);
         }
     }
 }
