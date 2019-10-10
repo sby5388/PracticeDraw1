@@ -34,8 +34,19 @@
         android:text="重置"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toLeftOf="@id/insert"
+        app:layout_constraintRight_toLeftOf="@id/button_animation"
         tools:text="@android:string/cancel" />
+
+    <Button
+        android:id="@+id/button_animation"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:text="旋转"
+        app:layout_constraintBottom_toBottomOf="@id/insert"
+        app:layout_constraintLeft_toRightOf="@id/reset"
+        app:layout_constraintRight_toLeftOf="@id/insert"
+        app:layout_constraintTop_toTopOf="@id/insert" />
 
     <Button
         android:id="@+id/insert"
@@ -44,8 +55,9 @@
         android:layout_margin="5dp"
         android:text="插入"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toRightOf="@id/reset"
+        app:layout_constraintLeft_toRightOf="@id/button_animation"
         app:layout_constraintRight_toLeftOf="@id/commit" />
+
 
     <Button
         android:id="@+id/commit"

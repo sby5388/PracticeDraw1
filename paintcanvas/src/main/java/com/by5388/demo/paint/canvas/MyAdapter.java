@@ -8,6 +8,7 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
 import androidx.annotation.NonNull;
@@ -22,8 +23,17 @@ public class MyAdapter extends BaseAdapter {
         mSampleData = new ArrayList<>();
     }
 
-    public void setSampleData(List<PieChartView.PieData> sampleData) {
+    void setSampleData(List<PieChartView.PieData> sampleData) {
         mSampleData = sampleData;
+        mSampleData.sort(new Comparator<PieChartView.PieData>() {
+            @Override
+            public int compare(PieChartView.PieData o1, PieChartView.PieData o2) {
+                if (o1.getValue() == o2.getValue()) {
+                    return 0;
+                }
+                return o1.getValue() > o2.getValue() ? -1 : 1;
+            }
+        });
         this.notifyDataSetChanged();
     }
 

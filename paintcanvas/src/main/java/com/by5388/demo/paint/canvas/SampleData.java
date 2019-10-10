@@ -7,9 +7,6 @@ public class SampleData implements PieChartView.PieData {
     private final String mName;
     private final float mValue;
 
-    public static SampleData newInstance(String name, float value) {
-        return new SampleData(name, value);
-    }
 
     SampleData(String name, float value) {
         mName = name;
@@ -25,4 +22,5 @@ public class SampleData implements PieChartView.PieData {
     public float getValue() {
         return mValue;
     }
+
 }

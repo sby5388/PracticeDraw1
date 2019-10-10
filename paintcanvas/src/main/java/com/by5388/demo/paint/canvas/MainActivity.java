@@ -1,5 +1,6 @@
 package com.by5388.demo.paint.canvas;
 
+import android.animation.ObjectAnimator;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -48,10 +49,12 @@ public class MainActivity extends AppCompatActivity implements DialogInterface.O
         final Button commit = findViewById(R.id.commit);
         final Button reset = findViewById(R.id.reset);
         final Button insert = findViewById(R.id.insert);
+        final Button animation = findViewById(R.id.button_animation);
 
         commit.setOnClickListener(v -> submit());
         reset.setOnClickListener(v -> clear());
         insert.setOnClickListener(v -> showAddDialog());
+        animation.setOnClickListener(v -> startCustomAnimation());
         initDefaultData();
     }
 
@@ -59,6 +62,8 @@ public class MainActivity extends AppCompatActivity implements DialogInterface.O
         // TODO: 2019/10/9 自动补充一些默认的数据
         mDataList.add(new SampleData("广州", 1400));
         mDataList.add(new SampleData("深圳", 1200));
+        mDataList.add(new SampleData("东莞", 700));
+        mDataList.add(new SampleData("佛山", 800));
     }
 
     @Override
@@ -74,6 +79,20 @@ public class MainActivity extends AppCompatActivity implements DialogInterface.O
 
     private void clear() {
         mPieChartView.setDataList(new ArrayList<>());
+    }
+
+
+    float mAngle = 90f;
+
+    private void startCustomAnimation() {
+        // TODO: 2019/10/10 自定义的动画 参考 https://blog.csdn.net/qq_40881680/article/details/
+        //旋转90度
+        final ObjectAnimator animator = ObjectAnimator.ofFloat(mPieChartView, "rotation", mAngle);
+        animator.setDuration(300);
+        animator.start();
+        mAngle += 90f;
+        // TODO: 2019/10/10 如何实现 再次点击时 继续旋转度数呢
+
     }
 
 
