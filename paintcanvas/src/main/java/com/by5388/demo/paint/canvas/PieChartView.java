@@ -132,7 +132,7 @@ public class PieChartView extends View {
     }
 
     public void startAnimator() {
-        post()
+        
     }
 
     public void stopAnimator(){
